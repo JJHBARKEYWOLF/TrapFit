@@ -9,20 +9,17 @@ Input data should be like fslmeants output: one .txt file per subject,
 
 Arguments:
 Required:
-    --path           - Absolute or relative path containing the timeseries .txt files (e.g. fslmeants output, 1 file per subject).
-                        Text file names will be used as the subject names.
+    --path           - Absolute or relative path containing the timeseries .txt files (e.g. fslmeants output, 1 file per subject). Text file names will be used as the subject names.
     --TR             - TR(s)
     --onduration     - stimulus duration
     --blockduration  - duration of the block (stimulus + rest)
     --outputname     - base name of the output files (e.g. name of the experiment)
 
 Optional:
-    --CVthresh       - A coefficient of variation (CV, aka RSD) threshold above which blocks will be classified as outliers. 
-                        These blocks will be removed from the analysis (defaults to no threshold).
-    --restfirst      - Whether the blocks start with a rest period.'TRUE' or 'FALSE', default is FALSE.
-                        If set to TRUE, the script discards the first period of the input data.
+    --CVthresh       - A coefficient of variation (CV, aka RSD) threshold above which blocks will be classified as outliers. These blocks will be removed from the analysis (defaults to no threshold).
+    --restfirst      - Whether the blocks start with a rest period.'TRUE' or 'FALSE', default is FALSE. If set to TRUE, the script discards the first period of the input data.
     
-  --help           - print this text
+    --help           - print this text
 
 Example:
     Rscript ./trapfit.R --path='./timeseries/' --TR=3 --onduration=20 --blockduration=48 --CVthresh=3 --restfirst=FALSE --outputname='test'\n\n"
