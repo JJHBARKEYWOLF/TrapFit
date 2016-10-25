@@ -207,12 +207,12 @@ allavgs <- do.call(rbind,blockavgs)
 write.csv(outputtable, file = paste0(argsL$outputname,"_fitparameters.csv"))
 write.csv(data.frame(argsL), file = paste0(argsL$outputname,"_trapfit_settings.csv"))
 
-#collect CV values
-if(!is.null(argsL$CVthresh)) {
-  CV_df <- do.call(rbind, CV_all)
-  rownames(CV_df) <- seq_along(CV_df$value)
-  write.csv(CV_df, file = paste0(argsL$outputname,"CV_per_block.csv"))
-}
+# #collect CV values
+# if(!is.null(argsL$CVthresh)) {
+#   CV_df <- do.call(rbind, CV_all)
+#   rownames(CV_df) <- seq_along(CV_df$value)
+#   write.csv(CV_df, file = paste0(argsL$outputname,"CV_per_block.csv"))
+# }
 
 #render all plots and output to pdf
 pdf(file = paste0(argsL$outputname,"_allfits.pdf"),paper = 'a4r', width = 11.5, height = 8)
