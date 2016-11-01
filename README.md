@@ -1,7 +1,8 @@
 # TrapFit (beta)
-Trapezoid fitting script for checkerboard-based vascular reactivity analysis, based on the method described in Dumas et al. 2012.
-This script is used to fit a trapezoid curve on fMRI timeseries data acquired during a block-design stimulus experiment.
-See the file 'theory.pdf' for additional background info and implementation details. The actual curve fitting relies on the excellent ```stats::constrOptim``` function that comes with R.
+Many brain pathologies manifest with some degree of vascular dysfunction. Blood-oxygen-level dependent (BOLD) functional magnetic resonance imaging (fMRI) is frequently used to investigate the brain's haemodynamic response to stimuli. TrapFit allows an investigator to derive several parameters relevant to vascular physiology from block-design stimulus experiments. It works by generating a crude, trapezoid-shaped approximation of the haemodynamic response function from a BOLD timeseries so that the time-to-peak, time-to-baseline and amplitude of the response can be calculated. It is based primarily on the method described by [Dumas et al.(1)](http://onlinelibrary.wiley.com/doi/10.1002/ana.23566/abstract "Functional magnetic resonance imaging detection of vascular reactivity in cerebral amyloid angiopathy"), with some modifications. Many of the methodological considerations discussed in that paper  are also applicable for this method. If you want to cite this method, please consider citing the Dumas paper but be sure to consider the differences between the approaches. The actual curve fitting relies on the excellent ```stats::constrOptim``` function that comes with R. 
+
+# Procedure
+See ```theory.pdf```.
 
 # Example Usage
 Make sure you have the latest version of R installed. When working on the SHARK-cluster, make sure the latest R module is imported. At the time of writing you can import the latest version with this command:
@@ -48,12 +49,16 @@ See the ```extract_TS.sh``` shell script for an example of this procedure.
 CPU and memory use of the script is pretty low. Running on 20 subjects should take about 30 seconds on an average desktop computer.
 
 
-##
-
-
 # Bugs/issues/suggestions
 At the time of writing, I have tested the script on only a single dataset. I'll be adding features and fixing bugs as I go along.
 However, if you find something that doesn't work as you expected, feel free to contact me or open an issue.
 If you have any suggestions regarding the implementation (used algorithms, parameters, etc.) please tell me. Any potential improvements are welcome!
 
+##
 
+# References
+[1] Andrew Dumas, Gregory A Dierksen, M Edip Gurol, Amy Halpin, Sergi
+Martinez-Ramirez, Kristin Schwab, Jonathan Rosand, Anand Viswanathan,
+David H Salat, Jonathan R Polimeni, et al. Functional magnetic resonance
+imaging detection of vascular reactivity in cerebral amyloid angiopathy. An-
+nals of neurology, 72(1):76{81, 2012.
