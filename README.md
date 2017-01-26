@@ -5,7 +5,7 @@ Many brain pathologies manifest with some degree of vascular dysfunction. Blood-
 See ```theory.pdf```.
 
 # Example Usage
-Make sure you have the latest version of R installed. When working on the SHARK-cluster, make sure the latest R module is imported. At the time of writing you can import the latest version with this command:
+Make sure you have the latest version of R installed. Note that working in a high performance computing environment like the SHARK-cluster is not necessary (see resource usage). However, when working on the SHARK-cluster, make sure the latest R module is imported. At the time of writing you can import the latest version with this command:
 
 ```
 module load R/3.3.0
@@ -37,13 +37,12 @@ Some example datafiles are included in ```/example_data/``` to give you an idea 
 See the ```extract_TS.sh``` shell script for an example of this procedure.
 
 # Output files
-* ```$experiment$_fitparameters.pdf``` this table contains the fit parameters and the calculated TTP and TTB values.
+* ```$experiment$_fitparameters.csv``` this table contains the fit parameters and the calculated TTP and TTB values.
 * ```$experiment$_raw_inputs.pdf``` plots of the mean timeseries that were provided as input data.
 * ```$experiment$_allfits.pdf``` the trapezoid curves that were fit for every subject to evaluate fit quality.
 * ```$experiment$_trapfit_settings.pdf``` logs the parameters you fed the script.
 * ```$experiment$_blockaverages.pdf``` shows the average timeseries over all blocks for all subjects. This plot can be used to identify problems with your data.
 * ```$experiment$_outlierblocks.pdf``` contains the blocks that were tagged as outliers because they exceeded the specified CV threshold.
-
 
 # Resource use
 CPU and memory use of the script is pretty low. Running on 20 subjects should take about 30 seconds on an average desktop computer.
